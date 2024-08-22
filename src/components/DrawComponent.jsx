@@ -19,7 +19,7 @@ function DrawComponent() {
         ctx.lineCap = 'rounded'
 
         ctx.fillStyle = "white";
-        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        clear();
     }, [])
 
     function startDrawing({nativeEvent}){
@@ -42,7 +42,9 @@ function DrawComponent() {
     function stopDrawing(){
         setIsDrawing(false)
         contextRef.current.closePath();
-
+    }
+    function clear(){
+        contextRef.current.fillRect(0, 0, canvasRef.current.width, canvasRef.current.height);
     }
         
     

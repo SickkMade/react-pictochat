@@ -14,6 +14,9 @@ function Toolbar({ sendMessage }) {
       img.src = messages[messages.length-1]
       contextRef.current.drawImage(img,0,0)
     }
+    
+    const clear = () => contextRef.current.fillRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+        
   return (
     <>
     <button onClick={() => setButtonWidth(2)} className={`${isButtonSelected(2, buttonWidth)} toolbar__button`}>sizeSmall</button>
@@ -22,6 +25,7 @@ function Toolbar({ sendMessage }) {
     <button onClick={() => setColor("white")} className={`${isButtonSelected("white", color)} toolbar__button`}>eraser</button>
     <button onClick={() => sendMessage()} className="toolbar__button">send</button>
     <button onClick={() => setImage()} className="toolbar__button">getLast</button>
+    <button onClick={() => clear()} className="toolbar__button">clear</button>
     </>
   )
 }
