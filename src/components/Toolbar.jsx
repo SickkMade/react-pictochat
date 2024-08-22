@@ -18,7 +18,7 @@ function Toolbar({ sendMessage }) {
     const clear = () => contextRef.current.fillRect(0, 0, canvasRef.current.width, canvasRef.current.height);
         
   return (
-    <>
+    <div id="toolbar">
     <button onClick={() => setButtonWidth(2)} className={`${isButtonSelected(2, buttonWidth)} toolbar__button`}>sizeSmall</button>
     <button onClick={() => setButtonWidth(5)} className={`${isButtonSelected(5, buttonWidth)} toolbar__button`}>sizeLarge</button>
     <button onClick={() => setColor("black")} className={`${isButtonSelected("black", color)} toolbar__button`}>pencil</button>
@@ -26,7 +26,7 @@ function Toolbar({ sendMessage }) {
     <button onClick={() => sendMessage()} className="toolbar__button">send</button>
     <button onClick={() => setImage()} className="toolbar__button">getLast</button>
     <button onClick={() => clear()} className="toolbar__button">clear</button>
-    </>
+    </div>
   )
 }
 

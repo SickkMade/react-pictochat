@@ -4,3 +4,10 @@
 .toolbar__button{
     user-select: none;
 }
+#toolbar{
+    display:flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+
+    width:var(--toolbar-width);
+}

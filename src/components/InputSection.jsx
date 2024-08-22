@@ -1,6 +1,6 @@
 import DrawComponent from "./DrawComponent.jsx"
 import Toolbar from "./Toolbar.jsx"
-import React, { useState, useEffect, useRef } from 'react'
+import React, { useState, useRef } from 'react'
 import '../css/BottomHalf.css'
 
 import io from 'socket.io-client'
@@ -24,10 +24,13 @@ function InputSection() {
     }
   
     return (
-      <DrawingContext.Provider value={[buttonWidth, setButtonWidth, color, setColor, canvasRef, contextRef]}>
-       <Toolbar sendMessage={sendMessage} />
-       <DrawComponent canvasRef={canvasRef} />
-      </DrawingContext.Provider>
+        <section id="input-section">
+            <DrawingContext.Provider value={[buttonWidth, setButtonWidth, color, setColor, canvasRef, contextRef]}>
+            <Toolbar sendMessage={sendMessage} />
+            <DrawComponent canvasRef={canvasRef} />
+            </DrawingContext.Provider>
+        </section>
+      
     )
 }
 

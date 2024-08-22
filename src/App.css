@@ -1,0 +1,18 @@
+#holder{
+    display:flex;
+    flex-flow:column nowrap;
+    justify-content: space-around;
+}
+
+#input-section{
+    display:flex;
+    flex-flow:row nowrap;
+    position:absolute;
+    bottom:5%;
+}
+
+/* BIG STYLES */
+
+html{
+    height:100%;
+}

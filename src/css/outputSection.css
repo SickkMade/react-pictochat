@@ -1,0 +1,13 @@
+#output-section{
+    position:absolute;
+    height:64%;
+    top:0;
+    overflow:hidden;
+    overflow-y:scroll;
+    width: calc(var(--canvas-width) + var(--toolbar-width) + 10);
+}
+
+.output-section__image{
+    margin-left:var(--toolbar-width);
+    border: 2px black solid;
+}
