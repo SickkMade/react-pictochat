@@ -1,18 +1,19 @@
 #holder{
-    display:flex;
-    flex-flow:column nowrap;
-    justify-content: space-around;
+    margin-left:50%;
+    transform:translateX(-50%);
+    height:100dvh;
 }
 
 #input-section{
     display:flex;
     flex-flow:row nowrap;
-    position:absolute;
-    bottom:5%;
+    justify-content: center;
+
+    width: var(--card-width);
 }
 
 /* BIG STYLES */
 
-html{
-    height:100%;
+body{
+    overflow: hidden;
 }

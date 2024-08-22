@@ -1,24 +1,20 @@
-import InputSection from './components/InputSection';
-import OutputSection from './components/OutputSection';
 import './App.css'
 import './css/variables.css'
-import React, {useState} from 'react';
-
-export const messageContext = React.createContext();
+import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider} from 'react-router-dom'
+import Layout from './layouts/layout'
+import MainPage from './pages/mainPage'
 
 function App() {
 
-  const [messages, setMessages] = useState([]) 
-
-  return (
-    <section id="holder">
-    <messageContext.Provider value={[messages, setMessages]}>
-      <OutputSection/>
-      <InputSection/>
-    </messageContext.Provider>
-    </section>
-    
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route path='/' element={<Layout />}>
+        <Route index element={<MainPage />}/>
+      </Route>
+    )
   )
+
+  return <RouterProvider router={router}/>
 }
 
 export default App

@@ -1,6 +1,6 @@
 import { useEffect, useContext } from 'react'
 import io from 'socket.io-client'
-import { messageContext } from '../App'
+import { messageContext } from '../pages/mainPage.jsx'
 const socket = io.connect('http://localhost:8000')
 import '../css/outputSection.css'
 

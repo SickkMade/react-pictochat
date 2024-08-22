@@ -1,7 +1,7 @@
 import '../css/toolbar.css'
 import {useContext} from 'react'
 import {DrawingContext} from './InputSection.jsx'
-import { messageContext } from '../App.jsx'
+import { messageContext } from '../pages/mainPage.jsx'
 
 function Toolbar({ sendMessage }) {
 
