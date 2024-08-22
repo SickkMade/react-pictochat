@@ -8,10 +8,11 @@ export const DrawingContext = React.createContext();
 
 function App() {
 
-  const [buttonWidth, setButtonWidth] = useState(1);
+  const [buttonWidth, setButtonWidth] = useState(2);
+  const [color, setColor] = useState('black')
 
   return (
-    <DrawingContext.Provider value={[buttonWidth, setButtonWidth]}>
+    <DrawingContext.Provider value={[buttonWidth, setButtonWidth, color, setColor]}>
      <Toolbar />
      <DrawComponent />
     </DrawingContext.Provider>

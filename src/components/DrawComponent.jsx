@@ -6,7 +6,7 @@ function DrawComponent() {
     const contextRef = useRef(null)
     const [isDrawing, setIsDrawing] = useState(false)
 
-    const [buttonWidth] = useContext(DrawingContext)
+    const [buttonWidth, setButtonWidth, color, setColor] = useContext(DrawingContext)
 
     useEffect(() => {
         const canvas = canvasRef.current
@@ -33,13 +33,15 @@ function DrawComponent() {
         if(!isDrawing || nativeEvent.buttons!==1) return;
         const {offsetX, offsetY} = nativeEvent;
         contextRef.current.lineWidth = buttonWidth;
+        contextRef.current.strokeStyle = color;
+
         contextRef.current.lineTo(offsetX,offsetY);
         contextRef.current.stroke();
 
     }
     function stopDrawing(){
         setIsDrawing(false)
-        contextRef.current.closePath();;
+        contextRef.current.closePath();
 
     }
         

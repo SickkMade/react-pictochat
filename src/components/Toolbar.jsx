@@ -4,14 +4,15 @@ import {DrawingContext} from '../App.jsx'
 
 function Toolbar() {
 
-    const [buttonWidth, setButtonWidth] = useContext(DrawingContext)
-
-    const isButtonSelected = sizeCheck =>  buttonWidth === sizeCheck ? 'toolbar__button--selected' : ''
+    const [buttonWidth, setButtonWidth, color, setColor] = useContext(DrawingContext)
+    const isButtonSelected = (sizeCheck, checkee) =>  checkee === sizeCheck ? 'toolbar__button--selected' : ''
 
   return (
     <>
-    <button onClick={() => setButtonWidth(1)} className={isButtonSelected(1)}>sizeSmall</button>
-    <button onClick={() => setButtonWidth(5)} className={isButtonSelected(5)}>sizeLarge</button>
+    <button onClick={() => setButtonWidth(2)} className={`${isButtonSelected(2, buttonWidth)} toolbar__button`}>sizeSmall</button>
+    <button onClick={() => setButtonWidth(5)} className={`${isButtonSelected(5, buttonWidth)} toolbar__button`}>sizeLarge</button>
+    <button onClick={() => setColor("black")} className={`${isButtonSelected("black", color)} toolbar__button`}>pencil</button>
+    <button onClick={() => setColor("white")} className={`${isButtonSelected("white", color)} toolbar__button`}>eraser</button>
     </>
   )
 }
