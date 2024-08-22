@@ -1,11 +1,12 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useContext } from 'react'
 import io from 'socket.io-client'
+import { messageContext } from '../App'
 const socket = io.connect('http://localhost:8000')
 
 
 function OutputSection() {
 
-    let [messages, setMessage] = useState([]) 
+    let [messages, setMessage] = useContext(messageContext) 
 
     useEffect(() => {
         socket.on('new-message', (data) => {

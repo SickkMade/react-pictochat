@@ -13,6 +13,8 @@ function InputSection() {
     const [buttonWidth, setButtonWidth] = useState(2);
     const [color, setColor] = useState('black')
     const canvasRef = useRef(null)
+    const contextRef = useRef(null)
+
 
 
     function sendMessage(){
@@ -22,7 +24,7 @@ function InputSection() {
     }
   
     return (
-      <DrawingContext.Provider value={[buttonWidth, setButtonWidth, color, setColor, canvasRef]}>
+      <DrawingContext.Provider value={[buttonWidth, setButtonWidth, color, setColor, canvasRef, contextRef]}>
        <Toolbar sendMessage={sendMessage} />
        <DrawComponent canvasRef={canvasRef} />
       </DrawingContext.Provider>

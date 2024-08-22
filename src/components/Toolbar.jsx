@@ -1,11 +1,19 @@
 import '../css/toolbar.css'
 import {useContext} from 'react'
 import {DrawingContext} from './InputSection.jsx'
+import { messageContext } from '../App.jsx'
 
 function Toolbar({ sendMessage }) {
 
-    const [buttonWidth, setButtonWidth, color, setColor] = useContext(DrawingContext)
+    const [buttonWidth, setButtonWidth, color, setColor, canvasRef, contextRef] = useContext(DrawingContext)
+    const [messages] = useContext(messageContext)
     const isButtonSelected = (sizeCheck, checkee) =>  checkee === sizeCheck ? 'toolbar__button--selected' : ''
+
+    function setImage(){
+      let img = new Image;
+      img.src = messages[messages.length-1]
+      contextRef.current.drawImage(img,0,0)
+    }
   return (
     <>
     <button onClick={() => setButtonWidth(2)} className={`${isButtonSelected(2, buttonWidth)} toolbar__button`}>sizeSmall</button>
@@ -13,6 +21,7 @@ function Toolbar({ sendMessage }) {
     <button onClick={() => setColor("black")} className={`${isButtonSelected("black", color)} toolbar__button`}>pencil</button>
     <button onClick={() => setColor("white")} className={`${isButtonSelected("white", color)} toolbar__button`}>eraser</button>
     <button onClick={() => sendMessage()} className="toolbar__button">send</button>
+    <button onClick={() => setImage()} className="toolbar__button">getLast</button>
     </>
   )
 }

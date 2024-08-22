@@ -2,10 +2,9 @@ import {useEffect, useRef, useState, useContext} from 'react';
 import {DrawingContext} from './InputSection.jsx'
 
 function DrawComponent() {
-    const contextRef = useRef(null)
     const [isDrawing, setIsDrawing] = useState(false)
 
-    const [buttonWidth, setButtonWidth, color, setColor, canvasRef] = useContext(DrawingContext)
+    const [buttonWidth, setButtonWidth, color, setColor, canvasRef, contextRef] = useContext(DrawingContext)
 
     useEffect(() => {
         const canvas = canvasRef.current
@@ -16,9 +15,11 @@ function DrawComponent() {
         canvas.height = 200;
         canvas.width = 400;
 
-        contextRef.current.lineWidth = buttonWidth;
-        contextRef.current.lineCap = 'rounded'
+        ctx.lineWidth = buttonWidth;
+        ctx.lineCap = 'rounded'
 
+        ctx.fillStyle = "white";
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
     }, [])
 
     function startDrawing({nativeEvent}){
