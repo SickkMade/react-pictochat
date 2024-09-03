@@ -3,13 +3,18 @@ import './css/variables.css'
 import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider} from 'react-router-dom'
 import Layout from './layouts/layout'
 import MainPage from './pages/mainPage'
+import ProtectedRoutes from './util/ProtectedRoutes'
+import GetName from './components/GetName'
 
 function App() {
 
   const router = createBrowserRouter(
     createRoutesFromElements(
       <Route path='/' element={<Layout />}>
-        <Route index element={<MainPage />}/>
+        <Route path='/' element={<ProtectedRoutes/>}>
+          <Route path='/' element={<MainPage />}/>
+        </Route>
+        <Route path="/login"element={<GetName />} />
       </Route>
     )
   )

@@ -50,6 +50,7 @@ function DrawComponent() {
         contextRef.current.fillRect(0, 0, canvasRef.current.width, canvasRef.current.height);
     }
         
+    // TODO ** fix canvas not drawing on refresh. after begin path called works. so somehow path being disrupted. goodluck future jack
     
   return (
     <canvas 

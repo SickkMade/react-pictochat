@@ -29,7 +29,7 @@ function InputSection() {
 
     function setImage(){
         let img = new Image;
-        img.src = messages[messages.length-1]
+        img.src = messages[0]
         contextRef.current.drawImage(img,0,0)
       }
   
