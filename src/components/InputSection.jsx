@@ -7,7 +7,7 @@ import '../css/BottomHalf.css'
 import io from 'socket.io-client'
 
 export const DrawingContext = React.createContext();
-const socket = io.connect('https://react-pictochat-backend.onrender.com:8000')
+const socket = io.connect('https://react-pictochat-backend.onrender.com')
 
 function InputSection() {
 
