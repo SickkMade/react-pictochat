@@ -9,8 +9,8 @@ function MainPage() {
 
   return (
     <section id="holder">
-    <messageContext.Provider value={[messages, setMessages]}>
       <SettingsSection />
+    <messageContext.Provider value={[messages, setMessages]}>
       <OutputSection/>
       <InputSection/>
     </messageContext.Provider>
