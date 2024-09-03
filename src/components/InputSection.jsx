@@ -19,7 +19,6 @@ function InputSection() {
 
     function clear(){
         contextRef.current.fillRect(0, 0, canvasRef.current.width, canvasRef.current.height);
-        console.log(import.meta.env.VITE_URL)
     }
 
     function sendMessage(){
