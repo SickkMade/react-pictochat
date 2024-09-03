@@ -7,7 +7,7 @@ import '../css/BottomHalf.css'
 import io from 'socket.io-client'
 
 export const DrawingContext = React.createContext();
-const socket = io.connect(import.meta.env.URL)
+const socket = io.connect(import.meta.env.VITE_URL)
 
 function InputSection() {
 
@@ -19,6 +19,7 @@ function InputSection() {
 
     function clear(){
         contextRef.current.fillRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+        console.log(import.meta.env.VITE_URL)
     }
 
     function sendMessage(){
