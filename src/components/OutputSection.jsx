@@ -1,7 +1,7 @@
 import { useEffect, useContext } from 'react'
 import io from 'socket.io-client'
 import { messageContext } from '../pages/mainPage.jsx'
-const socket = io.connect('https://react-pictochat-backend.onrender.com')
+const socket = io.connect(import.meta.env.URL)
 import '../css/outputSection.css'
 
 

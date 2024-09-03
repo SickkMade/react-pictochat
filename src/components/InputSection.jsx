@@ -7,7 +7,7 @@ import '../css/BottomHalf.css'
 import io from 'socket.io-client'
 
 export const DrawingContext = React.createContext();
-const socket = io.connect('https://react-pictochat-backend.onrender.com')
+const socket = io.connect(import.meta.env.URL)
 
 function InputSection() {
 
@@ -25,6 +25,7 @@ function InputSection() {
         let data = canvasRef.current.toDataURL();
 
         socket.emit('send-message', data)
+        clear()
     }
 
     function setImage(){
