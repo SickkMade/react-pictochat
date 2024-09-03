@@ -5,7 +5,7 @@ import { messageContext } from '../pages/mainPage.jsx'
 
 function Toolbar({ sendMessage }) {
 
-    const [buttonWidth, setButtonWidth, color, setColor, canvasRef, contextRef] = useContext(DrawingContext)
+    const {buttonWidth, setButtonWidth, color, setColor, canvasRef, contextRef} = useContext(DrawingContext)
     const [messages] = useContext(messageContext)
     const isButtonSelected = (sizeCheck, checkee) =>  checkee === sizeCheck ? 'toolbar__button--selected' : ''
 

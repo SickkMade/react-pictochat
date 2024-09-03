@@ -1,10 +1,10 @@
-import {useEffect, useRef, useState, useContext} from 'react';
+import {useEffect, useState, useContext} from 'react';
 import {DrawingContext} from './InputSection.jsx'
 
 function DrawComponent() {
     const [isDrawing, setIsDrawing] = useState(false)
 
-    const [buttonWidth, setButtonWidth, color, setColor, canvasRef, contextRef] = useContext(DrawingContext)
+    const {buttonWidth, color, canvasRef, contextRef} = useContext(DrawingContext)
 
     useEffect(() => {
         const canvas = canvasRef.current

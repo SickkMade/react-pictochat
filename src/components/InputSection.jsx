@@ -25,7 +25,7 @@ function InputSection() {
   
     return (
         <section id="input-section">
-            <DrawingContext.Provider value={[buttonWidth, setButtonWidth, color, setColor, canvasRef, contextRef]}>
+            <DrawingContext.Provider value={{buttonWidth, setButtonWidth, color, setColor, canvasRef, contextRef}}>
             <Toolbar sendMessage={sendMessage} />
             <DrawComponent canvasRef={canvasRef} />
             </DrawingContext.Provider>
