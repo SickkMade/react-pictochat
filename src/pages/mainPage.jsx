@@ -3,7 +3,7 @@ import OutputSection from '../components/OutputSection';
 import React, {useState} from 'react';
 export const messageContext = React.createContext();
 
-function mainPage() {
+function MainPage() {
     const [messages, setMessages] = useState([]) 
 
   return (
@@ -16,4 +16,4 @@ function mainPage() {
   )
 }
 
-export default mainPage
+export default MainPage

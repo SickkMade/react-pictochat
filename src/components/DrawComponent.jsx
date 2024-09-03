@@ -23,14 +23,17 @@ function DrawComponent() {
     }, [])
 
     function startDrawing({nativeEvent}){
-        const {offsetX, offsetY} = nativeEvent;
-        contextRef.current.beginPath();
-        contextRef.current.moveTo(offsetX, offsetY)
-
         setIsDrawing(true)
+        
+        const {offsetX, offsetY} = nativeEvent;
+        startPath()
+        contextRef.current.moveTo(offsetX, offsetY)
+    }
+    function startPath(){
+        contextRef.current.beginPath();
     }
     function draw({nativeEvent}){
-        if(!isDrawing || nativeEvent.buttons!==1) return;
+        if(!isDrawing && nativeEvent.buttons!==1) return;
         const {offsetX, offsetY} = nativeEvent;
         contextRef.current.lineWidth = buttonWidth;
         contextRef.current.strokeStyle = color;
@@ -56,7 +59,7 @@ function DrawComponent() {
     onMouseOut={stopDrawing}
     onMouseMove={draw}
     onMouseUp={stopDrawing}
-    onMouseEnter={startDrawing}
+    onMouseEnter={startPath}
     className="BottomHalf--canvas">
     </canvas>
   )
