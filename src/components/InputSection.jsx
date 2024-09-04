@@ -1,16 +1,13 @@
 import DrawComponent from "./DrawComponent.jsx"
 import Toolbar from "./Toolbar.jsx"
-import React, { useState, useRef, useContext } from 'react'
+import React, { useState, useRef, useContext, useEffect } from 'react'
 import { messageContext } from '../pages/mainPage.jsx'
 import '../css/BottomHalf.css'
 
-import io from 'socket.io-client'
-
 export const DrawingContext = React.createContext();
-const socket = io.connect(import.meta.env.VITE_URL)
 
-function InputSection() {
 
+function InputSection({ socket }) {
     const [buttonWidth, setButtonWidth] = useState(2);
     const [color, setColor] = useState('black')
     const [messages] = useContext(messageContext)
