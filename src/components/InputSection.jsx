@@ -1,8 +1,8 @@
-import DrawComponent from "./DrawComponent.jsx"
 import Toolbar from "./Toolbar.jsx"
-import React, { useState, useRef, useContext, useEffect } from 'react'
+import React, { useState, useRef, useContext } from 'react'
 import { messageContext } from '../pages/mainPage.jsx'
 import '../css/BottomHalf.css'
+import Canvas from "./Canvas.jsx"
 
 export const DrawingContext = React.createContext();
 
@@ -19,7 +19,12 @@ function InputSection({ socket }) {
     }
 
     function sendMessage(){
-        let data = canvasRef.current.toDataURL();
+        let data = {
+            type:'image',
+            data:canvasRef.current.toDataURL(),
+            username:localStorage.getItem('name'),
+        }
+        
 
         socket.emit('send-message', data)
         clear()
@@ -34,8 +39,8 @@ function InputSection({ socket }) {
     return (
         <section id="input-section">
             <DrawingContext.Provider value={{buttonWidth, setButtonWidth, color, setColor, canvasRef, setImage, contextRef, clear}}>
-            <Toolbar sendMessage={sendMessage} />
-            <DrawComponent />
+                <Toolbar sendMessage={sendMessage} />
+                <Canvas />
             </DrawingContext.Provider>
         </section>
       

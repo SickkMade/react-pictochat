@@ -1,0 +1,26 @@
+.UsernameCanvasOverlay--username{
+    background-color: palevioletred;
+    padding:2%;
+    border-right:pink 5px solid;
+    border-bottom:pink 5px solid;
+    width:fit-content;
+
+    pointer-events: none;
+}
+
+.UsernameCanvasOverlay{
+    position:absolute;
+    left:.75%;
+    top:1.5%;
+    z-index: 1;
+    width:96.5%;
+    height:91.25%;
+    border:4px pink solid;
+    pointer-events: none;
+}
+
+.UsernameCanvasOverlay__wrapper{
+    position:relative;
+    width:var(--canvas-width);
+    margin-left:var(--toolbar-width)
+}

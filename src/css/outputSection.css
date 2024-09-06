@@ -6,6 +6,10 @@
 }
 
 .output-section__image{
+    border: 3px black solid;
+}
+
+
+.output-section__p{
     margin-left:var(--toolbar-width);
-    border: 2px black solid;
 }

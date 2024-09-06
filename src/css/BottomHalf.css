@@ -1,3 +1,8 @@
 .BottomHalf--canvas{
     border:3px black solid;
+    position:relative;
+}
+
+.BottomHalf--Canvas__wrapper{
+    position:relative;
 }

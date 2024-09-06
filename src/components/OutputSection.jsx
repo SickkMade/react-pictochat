@@ -1,6 +1,7 @@
 import { useEffect, useContext } from 'react'
 import { messageContext } from '../pages/mainPage.jsx'
 import '../css/outputSection.css'
+import UsernameCanvasOverlay from './UsernameCanvasOverlay.jsx'
 
 
 function OutputSection( { socket } ) {
@@ -16,12 +17,17 @@ function OutputSection( { socket } ) {
   return (
     <section id="output-section">
         {/* I should send in an object declaring if it's a message or image... but well haha. i hope people dont abuse and send their own images */}
-        {messages.map((url, i) => {
-            if(url.slice(0, 10) === 'data:image'){
-                return <img className="output-section__image" key={i} src={url} />
+        {messages.map((data, i) => {
+            if(data.type === 'image'){
+                return (
+                    <div className="UsernameCanvasOverlay__wrapper"key={i}>
+                        <UsernameCanvasOverlay username={data.username}/>
+                        <img className="output-section__image" src={data.data} />
+                    </div>
+                )
             }
             else {
-                return <p key={i}>{url}</p>
+                return <p className="output-section__p" key={i}>{data.data}</p>
             }
         })}
     </section>
