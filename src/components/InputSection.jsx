@@ -25,6 +25,7 @@ function InputSection({ socket }) {
         //rewrite in server later
         let data = {
             type:'image',
+            imagetext:canvasTextRef.current.innerText,
             data:canvasRef.current.toDataURL(),
             username:localStorage.getItem('name'),
         }

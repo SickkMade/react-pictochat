@@ -3,4 +3,6 @@
     --canvas-width:400px;
     --card-width:550px;
     --canvas-height:200px;
+
+    user-select: none;
 }
