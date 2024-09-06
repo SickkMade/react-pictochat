@@ -15,7 +15,6 @@ function InputSection({ socket }) {
     const [messages] = useContext(messageContext)
     const canvasRef = useRef(null)
     const contextRef = useRef(null)
-    const canvasTextRef = useRef(null)
     const [canvasText, setCanvasText] = useState('')
 
     function clear(){
@@ -41,6 +40,7 @@ function InputSection({ socket }) {
     function setImage(){
         let img = new Image;
         img.src = messages[0].data
+        setCanvasText(messages[0].imagetext)
         contextRef.current.drawImage(img,0,0)
       }
 
@@ -50,7 +50,7 @@ function InputSection({ socket }) {
 
     return (
         <section id="input-section">
-            <DrawingContext.Provider value={{buttonWidth, setButtonWidth, color, setColor, canvasRef, setImage, contextRef, clear, canvasTextRef, canvasText, setCanvasText}}>
+            <DrawingContext.Provider value={{buttonWidth, setButtonWidth, color, setColor, canvasRef, setImage, contextRef, clear, canvasText, setCanvasText}}>
             <div className='InputSection--canvas__wrapper'>
                 <Toolbar sendMessage={sendMessage} />
                 <Canvas />
