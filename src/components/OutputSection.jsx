@@ -21,8 +21,7 @@ function OutputSection( { socket } ) {
             if(data.type === 'image'){
                 return (
                     <div className="OutputSection--item UsernameCanvasOverlay__wrapper output-section__image__wrapper"key={i}>
-                        <p className="App--CanvasOverlayText">{data.imagetext}</p>
-                        <UsernameCanvasOverlay username={data.username}/>
+                        <UsernameCanvasOverlay username={data.username} innerText={data.imagetext}/>
                         <img className="output-section__image" src={data.data} />
                     </div>
                 )

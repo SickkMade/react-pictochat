@@ -12,6 +12,8 @@
     overflow: hidden;
     max-width:50%;
     pointer-events: none;
+
+    display:inline-block;
 }
 
 .UsernameCanvasOverlay{

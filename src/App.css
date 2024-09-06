@@ -13,9 +13,7 @@
 }
 
 .App--CanvasOverlayText{
-    position:absolute;
-    top:0;
-    left:0;
+    display:inline-block;
     z-index: 2;
 
     line-height: 30px;
@@ -25,6 +23,9 @@
 
     overflow-wrap: break-word;
     word-break: break-word;
+
+    margin-top:0;
+    vertical-align: middle;
 
     /* bg wont go invis :( */
     background-color: transparent;

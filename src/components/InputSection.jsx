@@ -16,17 +16,18 @@ function InputSection({ socket }) {
     const canvasRef = useRef(null)
     const contextRef = useRef(null)
     const canvasTextRef = useRef(null)
+    const [canvasText, setCanvasText] = useState('')
 
     function clear(){
         contextRef.current.fillRect(0, 0, canvasRef.current.width, canvasRef.current.height);
-        canvasTextRef.current.innerText = "";
+        setCanvasText("")
     }
 
     function sendMessage(){
         //rewrite in server later
         let data = {
             type:'image',
-            imagetext:canvasTextRef.current.innerText,
+            imagetext:canvasText,
             data:canvasRef.current.toDataURL(),
             username:localStorage.getItem('name'),
         }
@@ -44,13 +45,12 @@ function InputSection({ socket }) {
       }
 
     function addLetter(e){
-        console.log(e.target.innerText)
-        canvasTextRef.current.innerText += e.target.innerText
+        setCanvasText(canvasText+e.target.innerText)
     }
-  
+
     return (
         <section id="input-section">
-            <DrawingContext.Provider value={{buttonWidth, setButtonWidth, color, setColor, canvasRef, setImage, contextRef, clear, canvasTextRef}}>
+            <DrawingContext.Provider value={{buttonWidth, setButtonWidth, color, setColor, canvasRef, setImage, contextRef, clear, canvasTextRef, canvasText, setCanvasText}}>
             <div className='InputSection--canvas__wrapper'>
                 <Toolbar sendMessage={sendMessage} />
                 <Canvas />
