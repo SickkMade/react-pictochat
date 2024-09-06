@@ -9,7 +9,26 @@
     border: 3px black solid;
 }
 
+.output-section__image__wrapper{
+    margin-left:var(--toolbar-width);
+}
 
 .output-section__p{
     margin-left:var(--toolbar-width);
+    background-color:black;
+    color:white;
+    border-radius: 7.5px;
+    padding-left:2%;
+    width:calc(var(--canvas-width) - 1%);
+    height:fit-content;
+}
+
+.output-section__p > *{
+    display:inline-block;
+}
+
+.output-section__p__yellow{
+    color:yellow;
+    margin-right:2%;
+    /* text-decoration:double; */
 }

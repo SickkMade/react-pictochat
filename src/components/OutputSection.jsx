@@ -20,14 +20,19 @@ function OutputSection( { socket } ) {
         {messages.map((data, i) => {
             if(data.type === 'image'){
                 return (
-                    <div className="UsernameCanvasOverlay__wrapper"key={i}>
+                    <div className="UsernameCanvasOverlay__wrapper output-section__image__wrapper"key={i}>
                         <UsernameCanvasOverlay username={data.username}/>
                         <img className="output-section__image" src={data.data} />
                     </div>
                 )
             }
             else {
-                return <p className="output-section__p" key={i}>{data.data}</p>
+                return (
+                    <div className="output-section__p" key={i}>
+                        <p className="output-section__p__yellow">Now Entering: </p>
+                        <p className="">{data.data}</p>
+                    </div>
+                )
             }
         })}
     </section>

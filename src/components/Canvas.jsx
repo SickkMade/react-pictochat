@@ -5,7 +5,7 @@ import '../css/UsernameCanvasOverlay.css'
 function Canvas() {
     
   return (
-    <div className="BottomHalf--Canvas__wrapper">
+    <div className="UsernameCanvasOverlay__wrapper">
     <UsernameCanvasOverlay username={localStorage.getItem('name')}/>
     <DrawComponent />
     </div>

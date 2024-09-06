@@ -19,6 +19,7 @@ function InputSection({ socket }) {
     }
 
     function sendMessage(){
+        //rewrite in server later
         let data = {
             type:'image',
             data:canvasRef.current.toDataURL(),
