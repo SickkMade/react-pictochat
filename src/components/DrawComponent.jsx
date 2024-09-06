@@ -12,7 +12,7 @@ function DrawComponent() {
         contextRef.current = ctx
 
         //resizing
-        canvas.height = 200;
+        canvas.height = 160;
         canvas.width = 400;
 
         ctx.lineWidth = buttonWidth;
