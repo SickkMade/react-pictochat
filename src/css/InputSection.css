@@ -1,0 +1,4 @@
+.InputSection--canvas__wrapper{
+    display:flex;
+    flex-flow: row nowrap;
+}

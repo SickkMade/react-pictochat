@@ -3,6 +3,8 @@ import React, { useState, useRef, useContext } from 'react'
 import { messageContext } from '../pages/mainPage.jsx'
 import '../css/BottomHalf.css'
 import Canvas from "./Canvas.jsx"
+import Keyboard from "./Keyboard.jsx"
+import '../css/InputSection.css'
 
 export const DrawingContext = React.createContext();
 
@@ -41,9 +43,12 @@ function InputSection({ socket }) {
     return (
         <section id="input-section">
             <DrawingContext.Provider value={{buttonWidth, setButtonWidth, color, setColor, canvasRef, setImage, contextRef, clear}}>
+            <div class='InputSection--canvas__wrapper'>
                 <Toolbar sendMessage={sendMessage} />
                 <Canvas />
+            </div>
             </DrawingContext.Provider>
+            <Keyboard />
         </section>
       
     )
