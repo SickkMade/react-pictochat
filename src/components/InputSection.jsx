@@ -30,9 +30,10 @@ function InputSection({ socket }) {
         clear()
     }
 
+    //CHANGE BECAUSE IF SOMEONE JOINS IT BREAKS
     function setImage(){
         let img = new Image;
-        img.src = messages[0]
+        img.src = messages[0].data
         contextRef.current.drawImage(img,0,0)
       }
   
