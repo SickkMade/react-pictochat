@@ -30,7 +30,7 @@ function OutputSection( { socket } ) {
                 return (
                     <div className="output-section__p" key={i}>
                         <p className="output-section__p__yellow">Now Entering: </p>
-                        <p className="">{data.data}</p>
+                        {data.data}
                     </div>
                 )
             }

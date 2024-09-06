@@ -8,7 +8,9 @@
     border-bottom-right-radius: 10px;
     border-top-left-radius: 10px;
 
-
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width:50%;
     pointer-events: none;
 }
 

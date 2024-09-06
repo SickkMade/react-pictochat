@@ -13,7 +13,7 @@ function GetName() {
   return (
     <Card>
         <label htmlFor="enterName">Enter Name</label>
-        <input id="enterName" type="text" onChange={e => setName(e.target.value)} />
+        <input id="enterName" type="text" onChange={e => setName(e.target.value)} maxLength={16} />
         <button onClick={nameSubmit}>Submit</button>
     </Card>
   )
