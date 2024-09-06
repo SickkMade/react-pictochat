@@ -15,6 +15,7 @@ function InputSection({ socket }) {
     const [messages] = useContext(messageContext)
     const canvasRef = useRef(null)
     const contextRef = useRef(null)
+    const canvasTextRef = useRef(null)
 
     function clear(){
         contextRef.current.fillRect(0, 0, canvasRef.current.width, canvasRef.current.height);
@@ -39,16 +40,21 @@ function InputSection({ socket }) {
         img.src = messages[0].data
         contextRef.current.drawImage(img,0,0)
       }
+
+    function addLetter(e){
+        console.log(e.target.innerText)
+        canvasTextRef.current.innerText += e.target.innerText
+    }
   
     return (
         <section id="input-section">
-            <DrawingContext.Provider value={{buttonWidth, setButtonWidth, color, setColor, canvasRef, setImage, contextRef, clear}}>
-            <div class='InputSection--canvas__wrapper'>
+            <DrawingContext.Provider value={{buttonWidth, setButtonWidth, color, setColor, canvasRef, setImage, contextRef, clear, canvasTextRef}}>
+            <div className='InputSection--canvas__wrapper'>
                 <Toolbar sendMessage={sendMessage} />
                 <Canvas />
             </div>
             </DrawingContext.Provider>
-            <Keyboard />
+            <Keyboard addLetter={addLetter}/>
         </section>
       
     )
