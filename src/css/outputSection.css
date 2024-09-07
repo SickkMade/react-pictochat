@@ -8,6 +8,8 @@
 .output-section__image{
     border: 3px black solid;
     border-radius: 15px;
+    z-index:2;
+    position:relative;
 }
 
 .output-section__image__wrapper{
