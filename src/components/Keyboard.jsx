@@ -9,12 +9,12 @@ function Keyboard( { addLetter } ) {
       ];
 
   return (
-    <div>
+    <div className='BottomHalf--Keyboard'>
         {keys.map((keyarray, i) => {
             return(
-            <div key={i}>
+            <div className="BottomHalf--Keyboard__Row" key={i}>
                 {keyarray.map((key,i) => {
-                    return <button onClick={addLetter} key={i}>{key}</button>
+                    return <button className="BottomHalf--Keyboard__Key" onClick={addLetter} key={i}>{key}</button>
                 })}
                 
             </div>

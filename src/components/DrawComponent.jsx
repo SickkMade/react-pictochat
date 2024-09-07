@@ -18,6 +18,8 @@ function DrawComponent() {
         ctx.lineWidth = buttonWidth;
         ctx.lineCap = 'rounded'
 
+        
+
         ctx.fillStyle = "rgb(0, 0, 0, 0)";
         clear();
     }, [])
