@@ -2,8 +2,10 @@
 function UsernameCanvasOverlay({ username, innerText }) {
   return (
     <>
-    <div className="usernameCanvasOverlay--username--outer UsernameCanvasOverlay--username">
-        {username}
+    <div className="UsernameCanvasOverlay UsernameCanvasOverlay--outer">
+        <div className="usernameCanvasOverlay--username--outer UsernameCanvasOverlay--username">
+            {username}
+        </div>
     </div>
     <div className="UsernameCanvasOverlay">
         <div className="UsernameCanvasOverlay--username">
