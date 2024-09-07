@@ -28,8 +28,7 @@
 .BottomHalf--Keyboard{
     background-color: rgb(236, 236, 236);
     border-radius: 10px;
-    width:60%;
-    margin-left:22.5%;
+    width:75%;
 }
 
 .BottomHalf--Keyboard__Key__Dark{
@@ -41,4 +40,18 @@
 
 .BottomHalf--Keyboard__Key__Darker{
     background-color: rgb(154, 154, 154);
+}
+
+.BottomHalf--Toolbox{
+    display:flex;
+    flex-flow: column nowrap;
+    justify-content: space-around;
+
+    margin-left:2%;
+}
+
+.bottomHalf--Input-Section{
+    display:flex;
+    flex-flow:row nowrap;
+    margin-left:19%;
 }

@@ -5,6 +5,7 @@ import '../css/BottomHalf.css'
 import Canvas from "./Canvas.jsx"
 import Keyboard from "./Keyboard.jsx"
 import '../css/InputSection.css'
+import KeyboardToolBoxSidebar from "./KeyboardToolBoxSidebar.jsx"
 
 export const DrawingContext = React.createContext();
 
@@ -75,12 +76,16 @@ function InputSection({ socket }) {
 
     return (
         <section id="input-section">
-            <DrawingContext.Provider value={{buttonWidth, setButtonWidth, color, setColor, canvasRef, setImage, contextRef, clear, canvasText, setCanvasText, caps, shift}}>
+            <DrawingContext.Provider value={{buttonWidth, setButtonWidth, color, setColor, canvasRef, setImage, contextRef, clear, canvasText, setCanvasText, caps, shift, sendMessage}}>
             <div className='InputSection--canvas__wrapper'>
-                <Toolbar sendMessage={sendMessage} />
+                <Toolbar />
                 <Canvas />
             </div>
-            <Keyboard addLetter={addLetter}/>
+            <div className="bottomHalf--Input-Section">
+                <Keyboard addLetter={addLetter}/>
+                <KeyboardToolBoxSidebar />
+            </div>
+            
             </DrawingContext.Provider>
         </section>
       
