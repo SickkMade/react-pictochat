@@ -1,6 +1,4 @@
-.toolbar__button--selected{
-    border:black 2px solid;
-}
+
 .toolbar__button{
     background-color:none;
     border:none;
@@ -19,4 +17,19 @@
 
 .toolbar__img{
     width:35px;
+}
+
+.toolbar__button__circle{
+    border-radius: 100px;
+    width:fit-content;
+    margin-left:50px;
+    padding:6%;
+}
+.toolbar__button__circle > .toolbar__img{
+    width:25px;
+    
+}
+.toolbar__button--selected{
+    border:black 2px solid;
+    background-color: aliceblue;
 }
