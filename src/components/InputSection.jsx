@@ -16,6 +16,8 @@ function InputSection({ socket }) {
     const canvasRef = useRef(null)
     const contextRef = useRef(null)
     const [canvasText, setCanvasText] = useState('')
+    const [shift, setShift] = useState(false)
+    const [caps, setCaps] = useState(false)
 
     function clear(){
         contextRef.current.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
@@ -56,21 +58,30 @@ function InputSection({ socket }) {
             case 'SPACE':
                 setCanvasText(canvasText+' ')
                 break;
+            case 'CAPS':
+                setCaps(!caps);
+                break;
+            case 'SHIFT':
+                setShift(!shift);
+                break
             default:
-                setCanvasText(canvasText+input)
+                caps ? input = input.toUpperCase() : input
+                shift ? input = input.toUpperCase() : input
+                setShift(false) //put this in a conditional
+                setCanvasText(canvasText + input)
                 break;
         }
     }
 
     return (
         <section id="input-section">
-            <DrawingContext.Provider value={{buttonWidth, setButtonWidth, color, setColor, canvasRef, setImage, contextRef, clear, canvasText, setCanvasText}}>
+            <DrawingContext.Provider value={{buttonWidth, setButtonWidth, color, setColor, canvasRef, setImage, contextRef, clear, canvasText, setCanvasText, caps, shift}}>
             <div className='InputSection--canvas__wrapper'>
                 <Toolbar sendMessage={sendMessage} />
                 <Canvas />
             </div>
-            </DrawingContext.Provider>
             <Keyboard addLetter={addLetter}/>
+            </DrawingContext.Provider>
         </section>
       
     )

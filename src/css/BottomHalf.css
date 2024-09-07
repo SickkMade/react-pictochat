@@ -31,3 +31,14 @@
     width:60%;
     margin-left:22.5%;
 }
+
+.BottomHalf--Keyboard__Key__Dark{
+    background-color: rgb(195, 195, 195);
+}
+.BottomHalf--Keyboard__Key__Space{
+    padding: 0 15%;
+}
+
+.BottomHalf--Keyboard__Key__Darker{
+    background-color: rgb(154, 154, 154);
+}
