@@ -9,9 +9,9 @@ function UsernameCanvasOverlay({ username, innerText }) {
         </div>
     </div>
     <div className="UsernameCanvasOverlay">
-        <div className="UsernameCanvasOverlay--username">
+        <p className="UsernameCanvasOverlay--username">
             {username}
-        </div>
+        </p>
         <p className="App--CanvasOverlayText">{innerText}</p>
     </div>
     </>

@@ -1,21 +1,18 @@
 .UsernameCanvasOverlay--username{
     visibility: none;
-    background-color: transparent;
     padding:2%;
     border:transparent 3px solid;
     margin: -3px 0 0 -3px;
     width:fit-content;
 
-    z-index: 5;
-    position:relative;
+    position:static;
 
-    text-overflow: ellipsis;
-    overflow: hidden;
     max-width:50%;
     pointer-events: none;
+    height:fit-content;
 
     color:transparent;
-    display:inline-block;
+    display:inline;
 }
 
 .UsernameCanvasOverlay{

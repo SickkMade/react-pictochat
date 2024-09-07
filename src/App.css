@@ -13,7 +13,7 @@
 }
 
 .App--CanvasOverlayText{
-    display:inline-block;
+    display:inline;
     z-index: -5;
     position:relative;
 
