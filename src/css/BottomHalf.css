@@ -17,13 +17,13 @@
 
 .BottomHalf--Keyboard__Key:hover{
     border:red dashed 1px;
-    transform:scale(120%);
     cursor: pointer;
+    transform:scale(105%);
 }
 
 .BottomHalf--Keyboard__Key:active{
     background-color: var(--dark-gray);
-    transform:scale(110%);
+    transform:scale(95%);
 }
 
 
