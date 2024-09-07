@@ -10,6 +10,7 @@
     border-radius: 15px;
     z-index:2;
     position:relative;
+    pointer-events: none;
 }
 
 .output-section__image__wrapper{
