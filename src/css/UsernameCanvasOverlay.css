@@ -1,4 +1,38 @@
 .UsernameCanvasOverlay--username{
+    visibility: none;
+    background-color: transparent;
+    padding:2%;
+    border:transparent 3px solid;
+    margin: -3px 0 0 -3px;
+    width:fit-content;
+
+    z-index: 5;
+    position:relative;
+
+    text-overflow: ellipsis;
+    overflow: hidden;
+    max-width:50%;
+    pointer-events: none;
+
+    color:transparent;
+    display:inline-block;
+}
+
+.UsernameCanvasOverlay{
+    position:absolute;
+    left:.75%;
+    top:1.5%;
+    width:98%;
+    height:90%;
+    border:4px pink solid;
+    pointer-events: none;
+    border-radius: 12px;
+    z-index: 1;
+    overflow:hidden;
+
+}
+
+.usernameCanvasOverlay--username--outer{
     background-color: palevioletred;
     padding:2%;
     border:pink 3px solid;
@@ -16,23 +50,6 @@
     max-width:50%;
     pointer-events: none;
 
-    display:inline-block;
-}
-
-.UsernameCanvasOverlay{
-    position:absolute;
-    left:.75%;
-    top:1.5%;
-    width:98%;
-    height:90%;
-    border:4px pink solid;
-    pointer-events: none;
-    border-radius: 12px;
-    z-index: 1;
-
-}
-
-.usernameCanvasOverlay--username--outer{
     position:absolute;
     top:0;
     left:0;

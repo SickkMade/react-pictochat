@@ -17,6 +17,10 @@
     z-index: -5;
     position:relative;
 
+    margin:0;
+
+    height:100%;
+    
     line-height: 30px;
     padding-left: 5px;
     overflow:hidden;
@@ -25,7 +29,6 @@
     overflow-wrap: break-word;
     word-break: break-word;
 
-    margin-top:0;
     vertical-align: middle;
 
     /* bg wont go invis :( */

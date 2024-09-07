@@ -4,7 +4,7 @@ function UsernameCanvasOverlay({ username, innerText }) {
   return (
     <>
     <div className="UsernameCanvasOverlay UsernameCanvasOverlay--outer">
-        <div className="usernameCanvasOverlay--username--outer UsernameCanvasOverlay--username">
+        <div className="usernameCanvasOverlay--username--outer">
             {username}
         </div>
     </div>

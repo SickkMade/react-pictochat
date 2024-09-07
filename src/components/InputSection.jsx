@@ -45,7 +45,21 @@ function InputSection({ socket }) {
       }
 
     function addLetter(e){
-        setCanvasText(canvasText+e.target.innerText)
+        let input = e.target.innerText
+        switch (input){
+            case 'DEL':
+                setCanvasText(canvasText.substring(0, canvasText.length-1))
+                break;
+            case 'ENTER':
+                setCanvasText(canvasText+'\n')
+                break;
+            case 'SPACE':
+                setCanvasText(canvasText+' ')
+                break;
+            default:
+                setCanvasText(canvasText+input)
+                break;
+        }
     }
 
     return (
