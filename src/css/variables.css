@@ -3,6 +3,8 @@
     --canvas-width:400px;
     --card-width:550px;
     --canvas-height:200px;
+    --light-gray:rgb(219, 219, 219);
+    --lighter-gray:rgb(236, 236, 236);
 
     user-select: none;
     font-family: "VT323", monospace;

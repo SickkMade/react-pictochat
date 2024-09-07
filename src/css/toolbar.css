@@ -2,7 +2,12 @@
     border:black 2px solid;
 }
 .toolbar__button{
-    user-select: none;
+    background-color:none;
+    border:none;
+}
+.toolbar__button:hover{
+    filter: brightness(110%);
+    cursor: pointer;
 }
 #toolbar{
     display:flex;
@@ -10,4 +15,8 @@
     justify-content: space-around;
 
     width:var(--toolbar-width);
+}
+
+.toolbar__img{
+    width:35px;
 }
