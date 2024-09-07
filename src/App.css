@@ -32,6 +32,17 @@
     background-color: transparent;
 }
 
+.App--Canvas__bg{
+    position: absolute;
+    left:0;
+    top:0;
+    width:100%;
+    height:95%;
+    background-color: white;
+    border-radius: 15px;
+    z-index: -5;
+}
+
 /* BIG STYLES */
 
 body{

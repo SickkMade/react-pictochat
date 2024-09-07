@@ -23,6 +23,7 @@ function OutputSection( { socket } ) {
                     <div className="OutputSection--item UsernameCanvasOverlay__wrapper output-section__image__wrapper"key={i}>
                         <UsernameCanvasOverlay username={data.username} innerText={data.imagetext}/>
                         <img className="output-section__image" src={data.data} />
+                        <div className="App--Canvas__bg"></div>
                     </div>
                 )
             }

@@ -1,5 +1,6 @@
 
 function UsernameCanvasOverlay({ username, innerText }) {
+    // stupid workaround
   return (
     <>
     <div className="UsernameCanvasOverlay UsernameCanvasOverlay--outer">

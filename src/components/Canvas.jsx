@@ -11,6 +11,7 @@ function Canvas() {
     <div className="UsernameCanvasOverlay__wrapper">
       <UsernameCanvasOverlay username={localStorage.getItem('name')} innerText={canvasText}/>
       <DrawComponent />
+      <div className="App--Canvas__bg"></div>
     </div>
   )
 }
