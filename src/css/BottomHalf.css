@@ -2,4 +2,5 @@
     border:3px black solid;
     border-radius: 15px;
     position:relative;
+    z-index: 1;
 }

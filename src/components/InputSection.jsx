@@ -18,7 +18,7 @@ function InputSection({ socket }) {
     const [canvasText, setCanvasText] = useState('')
 
     function clear(){
-        contextRef.current.fillRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+        contextRef.current.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
         setCanvasText("")
     }
 

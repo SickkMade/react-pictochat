@@ -18,7 +18,7 @@ function DrawComponent() {
         ctx.lineWidth = buttonWidth;
         ctx.lineCap = 'rounded'
 
-        ctx.fillStyle = "white";
+        ctx.fillStyle = "rgb(0, 0, 0, 0)";
         clear();
     }, [])
 
@@ -47,7 +47,9 @@ function DrawComponent() {
         contextRef.current.closePath();
     }
     function clear(){
-        contextRef.current.fillRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+
+        contextRef.current.clearRect(0, 0, canvasRef.current.width, canvasRef.current.height);
+
     }
         
     // TODO ** fix canvas not drawing on refresh. after begin path called works. so somehow path being disrupted. goodluck future jack
